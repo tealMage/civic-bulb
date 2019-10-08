@@ -28,30 +28,6 @@ class ContactPage extends StatelessWidget {
 
   const ContactPage({Key key}) : super(key: key);
 
-  List<Widget> navButtons() => [
-         SizedBox(height: 20,),
-        SocialButton(
-          image: "assets/images/octocat.png",
-          onPressed: () {
-            html.window.open("https://github.com/iampawan", "Git");
-          },
-        ), 
-        SizedBox(width: 20,),
-        SocialButton(
-          image: "assets/images/facebookLogo.png",
-          onPressed: () {
-            html.window.open("https://github.com/iampawan", "Git");
-          },
-        ), 
-        SizedBox(width: 20,),
-        SocialButton(
-          image: "assets/images/twitterLogo.png",
-          onPressed: () {
-            html.window.open("https://github.com/iampawan", "Git");
-          },
-        )
-      ];
-
   @override
   Widget build(BuildContext context) {
     return Provider<HomeBloc>(
@@ -65,7 +41,7 @@ class ContactPage extends StatelessWidget {
               largeScreen: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
-                  Header(navButtons: navButtons()),
+                  Header(),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.1,
                   ),

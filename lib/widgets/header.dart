@@ -3,11 +3,35 @@
 import 'package:civic_bulb/utils/responsive_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:civic_bulb/screens/home/home_page.dart';
-
+import 'dart:html' as html;
+import 'package:civic_bulb/widgets/nav_button.dart';
 class Header extends StatelessWidget {
-  final List<Widget> navButtons;
 
-  const Header({Key key, this.navButtons}) : super(key: key);
+  const Header({Key key}) : super(key: key);
+
+  List<Widget> navButtons() => [
+         SizedBox(height: 20,),
+        SocialButton(
+          image: "assets/images/octocat.png",
+          onPressed: () {
+            html.window.open("https://github.com/tealMage", "Git");
+          },
+        ), 
+        SizedBox(width: 20,),
+        SocialButton(
+          image: "assets/images/linkedinLogo.png",
+          onPressed: () {
+            html.window.open("https://www.linkedin.com/in/adam-sterrett-69427922", "Linked in");
+          },
+        ), 
+        SizedBox(width: 20,),
+        SocialButton(
+          image: "assets/images/twitterLogo.png",
+          onPressed: () {
+            html.window.open("https://twitter.com/tealmage", "Twitter");
+          },
+        )
+      ];
 
   Widget build(BuildContext context) {
     return Container(
@@ -43,7 +67,7 @@ class Header extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                     Row(
-                      children: navButtons,
+                      children: navButtons(),
                     )
                 ],
               ),

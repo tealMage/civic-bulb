@@ -1,9 +1,34 @@
 import 'package:flutter/material.dart';
+import 'dart:html' as html;
 
 class NavButton extends StatelessWidget {
   final text;
   final onPressed;
   final Color color;
+
+    List<Widget> navButtons() => [
+         SizedBox(height: 20,),
+        SocialButton(
+          image: "assets/images/octocat.png",
+          onPressed: () {
+            html.window.open("https://github.com/tealMage", "Git");
+          },
+        ), 
+        SizedBox(width: 20,),
+        SocialButton(
+          image: "assets/images/linkedinLogo.png",
+          onPressed: () {
+            html.window.open("https://www.linkedin.com/in/adam-sterrett-69427922", "Linked in");
+          },
+        ), 
+        SizedBox(width: 20,),
+        SocialButton(
+          image: "assets/images/twitterLogo.png",
+          onPressed: () {
+            html.window.open("https://twitter.com/tealmage", "Twitter");
+          },
+        )
+      ];
 
   const NavButton(
       {Key key,

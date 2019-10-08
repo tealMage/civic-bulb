@@ -27,30 +27,6 @@ class AboutPage extends StatelessWidget {
 
   const AboutPage({Key key}) : super(key: key);
 
-  List<Widget> navButtons() => [
-         SizedBox(height: 20,),
-        SocialButton(
-          image: "assets/images/octocat.png",
-          onPressed: () {
-            html.window.open("https://github.com/tealMage", "Git");
-          },
-        ), 
-        SizedBox(width: 20,),
-        SocialButton(
-          image: "assets/images/linkedinLogo.png",
-          onPressed: () {
-            html.window.open("https://www.linkedin.com/in/adam-sterrett-69427922", "Linked in");
-          },
-        ), 
-        SizedBox(width: 20,),
-        SocialButton(
-          image: "assets/images/twitterLogo.png",
-          onPressed: () {
-            html.window.open("https://twitter.com/tealmage", "Twitter");
-          },
-        )
-      ];
-
   @override
   Widget build(BuildContext context) {
     return Provider<HomeBloc>(
@@ -64,7 +40,7 @@ class AboutPage extends StatelessWidget {
               largeScreen: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
-                  Header(navButtons: navButtons()),
+                  Header(),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.1,
                   ),
